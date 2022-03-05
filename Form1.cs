@@ -101,11 +101,23 @@ namespace modul2_1302204014
         private void tambah_Click(object sender, EventArgs e)
         {
             function = '+';
+            first = userInput;
+            userInput = "";
         }
 
         private void hasil_Click(object sender, EventArgs e)
         {
-            function = '=';
+            second = userInput;
+            double firstNum, secondNum;
+            firstNum = Convert.ToDouble(first);
+            secondNum = Convert.ToDouble(second);
+
+            //tambah
+            if (function == '+')
+            {
+                result = firstNum + secondNum;
+                CalculatorDisplay.Text = result.ToString();
+            }
         }
     }
 }
